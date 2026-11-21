@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ef">
+  <meta name="description" content="Deine übersichtliche Einkaufsliste für dm, Spar, Action und mehr.">
+  <title>Einkaufsliste – Besorgungen</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon" aria-hidden="true">✓</span><span>Besorgungen</span></div>
+      <button class="reset-button" id="reset-button" type="button" aria-label="Alle Häkchen entfernen">Zurücksetzen</button>
+    </header>
+
+    <section class="welcome" aria-labelledby="page-title">
+      <p class="eyebrow">DEINE LISTE</p>
+      <h1 id="page-title">Alles im<br class="mobile-break"> Einkauf.</h1>
+      <p class="intro">Einmal durch die Läden – und alles ist erledigt.</p>
+      <div class="progress-panel" aria-live="polite">
+        <div class="progress-copy"><strong id="progress-count">0 von 0 erledigt</strong><span id="progress-percent">0%</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Einkaufsfortschritt" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progress-fill"></span></div>
+      </div>
+    </section>
+
+    <nav class="quick-nav" aria-label="Zu einem Bereich springen">
+      <a href="#dm"><span class="nav-dot dm-dot"></span>dm</a>
+      <a href="#spar"><span class="nav-dot spar-dot"></span>Spar</a>
+      <a href="#action"><span class="nav-dot action-dot"></span>Action</a>
+      <a href="#extra"><span class="nav-dot extra-dot"></span>Außerdem</a>
+    </nav>
+
+    <div class="list-layout">
+      <div class="shopping-column">
+        <section class="store-card" id="dm" data-group="dm">
+          <div class="section-heading"><div class="store-title"><span class="store-mark dm-mark">d</span><div><h2>dm</h2><p>Beauty & Wohlfühlen</p></div></div><span class="section-count" data-count-for="dm">0 / 9</span></div>
+          <ul class="checklist">
+            <li><label class="item"><input type="checkbox" data-id="dm-lipliner"><span class="custom-check"></span><span class="item-name">Lipliner</span></label></li>
+            <li><label class="item"><input type="checkbox" data-id="dm-lipgloss"><span class="custom-check"></span><span class="item-name">Lipgloss</span></label></li>
+            <li><label class="item"><input type="checkbox" data-id="dm-fixing"><span class="custom-check"></span><span class="item-name">Fixing Spray</span></label></li>
+            <li><label class="item"><input type="checkbox" data-id="dm-handcreme"><span class="custom-check"></span><span class="item-name">Handcreme</span></label></li>
+            <li><label class="item"><input type="checkbox" data-id="dm-nagellack"><span class="custom-check"></span><span class="item-name">Nagellack</span></label></li>
+            <li><label class="item"><input type="checkbox" data-id="dm-haarklammer"><span class="custom-check"></span><span class="item-name">Süße Haarklammer</span></label></li>
+            <li><label class="item"><input type="checkbox" data-id="dm-handwaermer"><span class="custom-check"></span><span class="item-name">Handwärmer</span></label></li>
+            <li><label class="item"><input type="checkbox" data-id="dm-socken"><span class="custom-check"></span><span class="item-name">Kuschelsocken</span></label></li>
+            <li><label class="item"><input type="checkbox" data-id="dm-maske"><span class="custom-check"></span><span class="item-name">Augenpads oder Tuchmaske</span></label><span class="item-note">für die Gesichtsbehandlung</span></li>
+          </ul>
+        </section>
+
+        <section class="store-card" id="spar" data-group="spar">
+          <div class="section-heading"><div class="store-title"><span class="store-mark spar-mark">S</span><div><h2>Spar</h2><p>Snacks & Zutaten</p></div></div><span class="section-count" data-count-for="spar">0 / 4</span></div>
+          <ul class="checklist">
+            <li><label class="item"><input type="checkbox" data-id="spar-brie"><span class="custom-check"></span><span class="item-name">Veganer Brie</span></label></li>
+            <li><label class="item"><input type="checkbox" data-id="spar-senseo"><span class="custom-check"></span><span class="item-name">Senseo Pads</span></label></li>
+            <li><label class="item"><input type="checkbox" data-id="spar-popcorn"><span class="custom-check"></span><span class="item-name">Popcorn</span></label></li>
+            <li><label class="item"><input type="checkbox" data-id="spar-keksteig"><span class="custom-check"></span><span class="item-name">Zutaten für den Keksteig</span></label><span class="item-note">Rezept-Zutaten · Vorräte vorher prüfen</span></li>
+          </ul>
+          <div class="home-note"><span aria-hidden="true">⌂</span><p><strong>Kakao ist schon zuhause.</strong> Musst du nicht mitnehmen.</p></div>
+        </section>
+
+        <section class="store-card" id="action" data-group="action">
+          <div class="section-heading"><div class="store-title"><span class="store-mark action-mark">A</span><div><h2>Action</h2><p>Kreativzeit & Kleinigkeiten</p></div></div><span class="section-count" data-count-for="action">0 / 3</span></div>
+          <ul class="checklist">
+            <li><label class="item"><input type="checkbox" data-id="action-ausstecher"><span class="custom-check"></span><span class="item-name">Ausstechformen</span></label><span class="item-note">Sets mit 4–5 Formen, ca. 0,99 €</span><a class="product-link" href="https://www.action.com/de-at/p/3219338/ausstechformen/" target="_blank" rel="noopener noreferrer">Zum Produkt <span aria-hidden="true">↗</span></a></li>
+            <li><label class="item"><input type="checkbox" data-id="action-haekelnadeln"><span class="custom-check"></span><span class="item-name">Häkelnadel-Set</span></label><span class="item-note">6 Größen, 1,99 € · plus glattes Garn in Josies Lieblingsfarbe</span><a class="product-link" href="https://www.action.com/de-at/p/3202114/hakelnadeln/" target="_blank" rel="noopener noreferrer">Häkelnadeln <span aria-hidden="true">↗</span></a><a class="product-link secondary-link" href="https://www.action.com/de-at/c/hobby/stricken--hakeln/" target="_blank" rel="noopener noreferrer">Garn entdecken <span aria-hidden="true">↗</span></a></li>
+            <li><label class="item"><input type="checkbox" data-id="action-anhaenger"><span class="custom-check"></span><span class="item-name">Holzanhänger zum Bemalen</span></label><span class="item-note">Ein Anhänger für den Kalender reicht. Set mit Farben, Perlen & Bändern.</span><a class="product-link" href="https://www.action.com/de-at/p/3217725/hobby-flora-weihnachtliche-holzanhanger-zum-bemalen/" target="_blank" rel="noopener noreferrer">Zum Produkt <span aria-hidden="true">↗</span></a></li>
+          </ul>
+          <p class="stock-note"><span aria-hidden="true">ⓘ</span> Filialbestände können vom Online-Angebot abweichen.</p>
+        </section>
+      </div>
+
+      <aside class="extra-card" id="extra" data-group="extra">
+        <div class="section-heading"><div class="store-title"><span class="store-mark extra-mark">✳</span><div><h2>Außerdem</h2><p>Besorgungen & Zuhause</p></div></div><span class="section-count" data-count-for="extra">0 / 5</span></div>
+        <ul class="checklist extra-list">
+          <li class="dated-item"><label class="item"><input type="checkbox" data-id="extra-blumen"><span class="custom-check"></span><span class="item-name">Blumenstrauß besorgen</span></label><span class="item-note"><span class="date-pill">Mo, 14. Dez.</span> Nach der Arbeit frisch kaufen</span></li>
+          <li><label class="item"><input type="checkbox" data-id="extra-unterwaesche"><span class="custom-check"></span><span class="item-name">Lounge-Unterwäsche</span></label><span class="item-note">Rechtzeitig online bestellen</span></li>
+          <li><label class="item"><input type="checkbox" data-id="extra-sticker"><span class="custom-check"></span><span class="item-name">Mac-Sticker</span></label><span class="item-note">Online kaufen, falls Action keine passenden hat</span></li>
+          <li><label class="item"><input type="checkbox" data-id="extra-vorbereiten"><span class="custom-check"></span><span class="item-name">Zuhause vorbereiten</span></label><span class="item-note">Café-Reisepass, Kreuzworträtsel & Frisuren-Vorschläge</span></li>
+          <li><label class="item"><input type="checkbox" data-id="extra-collage"><span class="custom-check"></span><span class="item-name">Collage fertigstellen</span></label><span class="item-note">Erst drucken lassen, wenn sie fertig bearbeitet ist</span></li>
+        </ul>
+        <div class="aside-tip"><span class="tip-icon" aria-hidden="true">✦</span><p>Du schaffst das.<br><strong>Viel Freude beim Einkaufen!</strong></p></div>
+      </aside>
+    </div>
+    <footer>Dein Einkaufsbegleiter <span aria-hidden="true">·</span> Häkchen werden auf diesem Gerät gespeichert</footer>
+  </main>
+</body>
+</html>
