@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#f7f4ef">
   <meta name="description" content="Deine übersichtliche Einkaufsliste für dm, Spar, Action und mehr.">
   <title>Einkaufsliste – Besorgungen</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=3">
+  <script type="module" src="script.js?v=3"></script>
 </head>
 <body>
   <main class="app-shell">
@@ -15,6 +15,25 @@
       <div class="brand"><span class="brand-icon" aria-hidden="true">✓</span><span>Besorgungen</span></div>
       <button class="reset-button" id="reset-button" type="button" aria-label="Alle Häkchen entfernen">Zurücksetzen</button>
     </header>
+
+    <section class="account-panel" aria-labelledby="account-title">
+      <div class="account-copy">
+        <h2 id="account-title">Liste synchronisieren</h2>
+        <p id="sync-status" aria-live="polite">Melde dich an oder erstelle ein Konto, um deine Liste auf mehreren Geräten zu nutzen.</p>
+      </div>
+      <form id="auth-form" class="auth-form">
+        <label class="visually-hidden" for="auth-email">E-Mail-Adresse</label>
+        <input id="auth-email" name="email" type="email" autocomplete="email" placeholder="E-Mail-Adresse" required>
+        <label class="visually-hidden" for="auth-password">Passwort</label>
+        <input id="auth-password" name="password" type="password" autocomplete="current-password" placeholder="Passwort (mindestens 6 Zeichen)" minlength="6" required>
+        <button type="submit" name="action" value="signin">Anmelden</button>
+        <button type="submit" name="action" value="signup" class="signup-button">Konto erstellen</button>
+      </form>
+      <div id="signed-in-panel" class="signed-in-panel" hidden>
+        <span id="signed-in-email"></span>
+        <button id="signout-button" type="button">Abmelden</button>
+      </div>
+    </section>
 
     <section class="welcome" aria-labelledby="page-title">
       <p class="eyebrow">DEINE LISTE</p>
@@ -88,7 +107,7 @@
       </div>
 
       <aside class="extra-card" id="extra" data-group="extra">
-        <div class="section-heading"><div class="store-title"><span class="store-mark extra-mark">✳</span><div><h2>Außerdem</h2><p>Besorgungen & Zuhause</p></div></div><span class="section-count" data-count-for="extra">0 / 7</span></div>
+          <div class="section-heading"><div class="store-title"><span class="store-mark extra-mark">✳</span><div><h2>Außerdem</h2><p>Besorgungen & Zuhause</p></div></div><span class="section-count" data-count-for="extra">0 / 7</span></div>
         <ul class="checklist extra-list">
           <li class="dated-item"><label class="item"><input type="checkbox" data-id="extra-blumen"><span class="custom-check"></span><span class="item-name">Blumenstrauß besorgen</span></label><span class="item-note"><span class="date-pill">Mo, 14. Dez.</span> Nach der Arbeit frisch kaufen</span></li>
           <li><label class="item"><input type="checkbox" data-id="extra-unterwaesche"><span class="custom-check"></span><span class="item-name">Lounge-Unterwäsche</span></label><span class="item-note">Rechtzeitig online bestellen</span></li>
